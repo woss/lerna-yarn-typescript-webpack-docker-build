@@ -1,11 +1,1 @@
-# `server`
-
-> TODO: description
-
-## Usage
-
-```
-const server = require('server');
-
-// TODO: DEMONSTRATE API
-```
+time docker build -t woss/ts-test:latest -f Dockerfile .

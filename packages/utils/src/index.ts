@@ -1,1 +1,3 @@
-console.log("utils");
+export async function sayHi(name: string) {
+  return `Hi ${name}`;
+}

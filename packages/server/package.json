@@ -1,7 +1,7 @@
 {
   "name": "@app/server",
-  "version": "0.0.0",
-  "description": "> TODO: description",
+  "version": "0.1.0",
+  "description": "Express server",
   "author": "Daniel Maricic <daniel@woss.io>",
   "homepage": "https://github.com/woss/lerna-yarn-typescript-webpack#readme",
   "license": "MIT",
@@ -16,9 +16,26 @@
     "url": "git+https://github.com/woss/lerna-yarn-typescript-webpack.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "compiled:run": "nodemon --watch dist dist/server.js",
+    "build:watch": "rimraf dist; webpack --config webpack.prod.js --watch --progress"
   },
   "bugs": {
     "url": "https://github.com/woss/lerna-yarn-typescript-webpack/issues"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.9",
+    "node-loader": "^1.0.2",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^8.0.14",
+    "ts-node-dev": "^1.1.1",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
+    "typescript": "^4.1.3",
+    "webpack": "^5.12.2",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1",
+    "webpack-node-externals": "^2.5.2"
   }
 }

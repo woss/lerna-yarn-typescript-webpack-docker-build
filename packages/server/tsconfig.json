@@ -1,4 +1,18 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src/**/*"]
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "noImplicitAny": false,
+    "module": "esnext",
+    "sourceMap": true,
+    "target": "ES2018"
+  },
+  "include": ["src"],
+  "references": [
+    {
+      "path": "../utils"
+    }
+  ]
 }
