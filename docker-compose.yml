@@ -12,3 +12,10 @@ services:
     build:
       context: packages/server
       dockerfile: Dockerfile
+  client:
+    image: client:latest
+    ports:
+      - 1234:80
+    build:
+      context: packages/client
+      dockerfile: Dockerfile
