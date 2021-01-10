@@ -1,0 +1,16 @@
+{
+  "name": "root",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "main": "index.js",
+  "repository": "git@github.com:woss/lerna-yarn-typescript-webpack.git",
+  "author": "Daniel Maricic <daniel@woss.io>",
+  "license": "MIT",
+  "dependencies": {
+    "lerna": "^3.22.1",
+    "typescript": "^4.1.3"
+  }
+}

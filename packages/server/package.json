@@ -1,0 +1,24 @@
+{
+  "name": "@app/server",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Daniel Maricic <daniel@woss.io>",
+  "homepage": "https://github.com/woss/lerna-yarn-typescript-webpack#readme",
+  "license": "MIT",
+  "main": "server.js",
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com",
+    "access": "public",
+    "directory": "dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woss/lerna-yarn-typescript-webpack.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/woss/lerna-yarn-typescript-webpack/issues"
+  }
+}
