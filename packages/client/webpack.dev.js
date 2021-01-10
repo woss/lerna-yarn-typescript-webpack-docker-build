@@ -1,12 +1,13 @@
 const path = require('path')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const nodeExternals = require('webpack-node-externals')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './src/server.ts',
+  entry: './src/index.tsx',
   devtool: 'inline-source-map',
   mode: 'development',
-  target: 'node',
+  target: 'web',
   module: {
     rules: [
       {
@@ -19,10 +20,21 @@ module.exports = {
         loader: 'ts-loader',
         options: { projectReferences: true },
       },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader',
+      },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, './public', 'index.html'),
+    }),
+  ],
+
   resolve: {
-    extensions: ['.ts'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     plugins: [
       new TsconfigPathsPlugin({
         /* options: see below */
@@ -30,12 +42,18 @@ module.exports = {
     ],
   },
   output: {
-    filename: 'server.js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
   },
-  externals: [
-    nodeExternals({
-      modulesFromFile: true,
-    }),
-  ],
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    hot: true,
+    port: 1234,
+  },
+  // externals: [
+  //   nodeExternals({
+  //     modulesFromFile: true,
+  //   }),
+  // ],
 }

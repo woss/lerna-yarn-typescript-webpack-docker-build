@@ -1,17 +1,18 @@
-import { ApolloClient, createHttpLink, NormalizedCacheObject } from '@apollo/client'
+import { ApolloClient, createHttpLink, NormalizedCacheObject, InMemoryCache } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
-import { getLocalAccessToken } from '../utils/getTokens'
-import { cache } from './cache'
+// import { getLocalAccessToken } from '../utils/getTokens'
+// import { cache } from './cache'
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:7666/graphql',
-  // credentials: 'same-origin', //// enable this when we move to the api
+  uri: 'https://48p1r2roz4.sse.codesandbox.io',
+  // credentials: 'same-origin', // enable this when we move to the api
 })
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = getLocalAccessToken()
+  // const token = getLocalAccessToken()
   // return the headers to the context so httpLink can read them
+  const token = null
   return {
     headers: {
       ...headers,
@@ -28,7 +29,8 @@ export default function createApolloClient(): ApolloClient<NormalizedCacheObject
   const client = new ApolloClient({
     connectToDevTools: true,
     link: authLink.concat(httpLink),
-    cache,
+
+    cache: new InMemoryCache(),
   })
   return client
 }
