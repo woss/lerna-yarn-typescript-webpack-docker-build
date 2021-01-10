@@ -1,0 +1,47 @@
+{
+  "name": "@app/client",
+  "version": "0.0.0",
+  "description": "React based app",
+  "author": "Daniel Maricic <daniel@woss.io>",
+  "homepage": "https://github.com/woss/lerna-yarn-typescript-webpack#readme",
+  "license": "MIT",
+  "main": "lib/app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woss/lerna-yarn-typescript-webpack.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/woss/lerna-yarn-typescript-webpack/issues"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "node-loader": "^1.0.2",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^8.0.14",
+    "ts-node-dev": "^1.1.1",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
+    "typescript": "^4.1.3",
+    "webpack": "^5.12.2",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1",
+    "webpack-node-externals": "^2.5.2"
+  }
+}

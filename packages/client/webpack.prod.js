@@ -3,7 +3,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
-  entry: './src/server.ts',
+  entry: './src/index.tsx',
   devtool: 'inline-source-map',
   mode: 'production',
   target: 'node',
@@ -30,7 +30,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: 'server.js',
+    filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   externals: [
