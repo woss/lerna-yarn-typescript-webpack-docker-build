@@ -1,0 +1,4 @@
+mode_modules
+dist
+Dockerfile
+docker-compose.yml

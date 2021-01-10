@@ -17,6 +17,7 @@
   },
   "scripts": {
     "compiled:run": "nodemon --watch dist dist/server.js",
+    "build": "rimraf dist; webpack --config webpack.prod.js",
     "build:watch": "rimraf dist; webpack --config webpack.prod.js --watch --progress"
   },
   "bugs": {

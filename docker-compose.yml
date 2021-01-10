@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  main:
+    image: main:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+  server:
+    image: server:latest
+    ports:
+      - 3000:3000
+    build:
+      context: packages/server
+      dockerfile: Dockerfile
