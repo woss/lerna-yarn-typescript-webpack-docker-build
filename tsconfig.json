@@ -37,7 +37,9 @@
       "@app/server": ["packages/server/src"],
       "@app/server/*": ["packages/server/src/*"],
       "@app/utils": ["packages/utils/src"],
-      "@app/utils/*": ["packages/utils/src/*"]
+      "@app/utils/*": ["packages/utils/src/*"],
+      "@app/client": ["packages/client/src"],
+      "@app/client/*": ["packages/client/src/*"]
     }
   },
   "references": [
@@ -46,6 +48,9 @@
     },
     {
       "path": "@app/utils"
+    },
+    {
+      "path": "@app/client"
     }
   ]
 }

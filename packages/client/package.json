@@ -13,7 +13,8 @@
     "url": "git+https://github.com/woss/lerna-yarn-typescript-webpack.git"
   },
   "scripts": {
-    "dev": "webpack serve --config webpack.dev.js --progress --watch"
+    "dev": "webpack serve --config webpack.dev.js --progress --watch",
+    "build": "rimraf dist; webpack --config webpack.prod.js"
   },
   "bugs": {
     "url": "https://github.com/woss/lerna-yarn-typescript-webpack/issues"
@@ -38,6 +39,7 @@
     "webpack": "^5.12.2",
     "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^3.11.1",
+    "webpack-manifest-plugin": "^3.0.0",
     "webpack-node-externals": "^2.5.2"
   }
 }

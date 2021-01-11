@@ -10,5 +10,14 @@ services:
     ports:
       - 3000:3000
     build:
-      context: packages/server
+      context: .
       dockerfile: Dockerfile
+      target: server
+  client:
+    image: client:latest
+    ports:
+      - 1234:80
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: client
