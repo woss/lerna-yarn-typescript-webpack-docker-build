@@ -14,9 +14,6 @@
   "references": [
     {
       "path": "../utils"
-    },
-    {
-      "path": "../server"
     }
   ]
 }

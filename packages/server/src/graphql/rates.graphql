@@ -1,0 +1,6 @@
+query GetExchangeRates($currency: String!) {
+  rates(currency: $currency) {
+    currency
+    rate
+  }
+}
