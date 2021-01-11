@@ -35,3 +35,16 @@ Building the packages is done by invoking the `docker-compose build PACKAGE_NAME
 Running the built image for `server` package: `docker-compose up server`
 
 Running image for `server` package and building it: `docker-compose up --build server`
+
+## Services endpoints
+
+Default ports, ATM you cannot change them via `env` vars. HARDCODED
+
+- `server` http://localhost:3000
+- `client` http://localhost:1234
+
+_Server endpoints_
+
+- http://localhost:3000 <-- home route
+- http://localhost:3000/name-that-should-say-hi <-- dummy route
+- http://localhost:3000/currency/eur <-- testing the graphql to get the exchange rate for eur, it can be any currency ISO code
